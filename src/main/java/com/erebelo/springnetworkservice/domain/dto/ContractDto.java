@@ -24,8 +24,8 @@ public class ContractDto {
     private String referenceId;
     private String profileId;
     private RoleEnum role;
-    private BusinessChannelEnum businessChannel;
     private ProductTypeEnum productType;
+    private BusinessChannelEnum businessChannel;
     private StatusEnum status;
     private LocalDate startDate;
     private LocalDate endDate;

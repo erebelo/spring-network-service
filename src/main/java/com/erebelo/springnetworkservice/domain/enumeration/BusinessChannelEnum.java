@@ -15,11 +15,20 @@ import lombok.ToString;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public enum BusinessChannelEnum implements EnumValueType {
 
-    @JsonProperty("Active")
-    ACTIVE("Active"),
+    @JsonProperty("Direct")
+    DIRECT("Direct"),
 
-    @JsonProperty("Inactive")
-    INACTIVE("Inactive");
+    @JsonProperty("Digital")
+    DIGITAL("Digital"),
+
+    @JsonProperty("Banking")
+    BANKING("Banking"),
+
+    @JsonProperty("Broker")
+    BROKER("Broker"),
+
+    @JsonProperty("Affinity")
+    AFFINITY("Affinity");
 
     private final String value;
 

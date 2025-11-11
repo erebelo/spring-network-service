@@ -27,7 +27,7 @@ import org.springframework.util.ErrorHandler;
 @ConditionalOnProperty(name = "network.hydration.scheduler.enabled", havingValue = "true")
 public class SchedulerConfig {
 
-    /*
+    /**
      * Executor dedicated for scheduled tasks (@Scheduled methods). By having a
      * dedicated ThreadPoolTaskScheduler, scheduled jobs run on their own threads
      * and are isolated from manual async executions, avoiding conflicts and thread

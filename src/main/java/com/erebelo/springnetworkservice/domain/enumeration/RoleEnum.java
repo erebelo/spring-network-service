@@ -15,11 +15,20 @@ import lombok.ToString;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public enum RoleEnum implements EnumValueType {
 
-    @JsonProperty("Active")
-    ACTIVE("Active"),
+    @JsonProperty("Insurer")
+    INSURER("Insurer"),
 
-    @JsonProperty("Inactive")
-    INACTIVE("Inactive");
+    @JsonProperty("Agency")
+    AGENCY("Agency"),
+
+    @JsonProperty("Regional Manager")
+    REGIONAL_MANAGER("Insurer"),
+
+    @JsonProperty("Agent")
+    AGENT("Agent"),
+
+    @JsonProperty("Client")
+    CLIENT("Client");
 
     private final String value;
 

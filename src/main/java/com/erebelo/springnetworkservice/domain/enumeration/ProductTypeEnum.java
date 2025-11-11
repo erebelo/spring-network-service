@@ -15,11 +15,17 @@ import lombok.ToString;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public enum ProductTypeEnum implements EnumValueType {
 
-    @JsonProperty("Active")
-    ACTIVE("Active"),
+    @JsonProperty("Life Insurance")
+    LIFE_INSURANCE("Life Insurance"),
 
-    @JsonProperty("Inactive")
-    INACTIVE("Inactive");
+    @JsonProperty("Health Insurance")
+    HEALTH_INSURANCE("Health Insurance"),
+
+    @JsonProperty("Pension")
+    PENSION("Pension"),
+
+    @JsonProperty("Investment")
+    INVESTMENT("Investment");
 
     private final String value;
 

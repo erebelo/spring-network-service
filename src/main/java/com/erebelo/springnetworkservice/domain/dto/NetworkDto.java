@@ -30,8 +30,8 @@ public class NetworkDto {
 
     private List<RelationshipDto> sellingRelationships;
     private List<NonSellingRelationshipDto> nonSellingRelationships;
-    private BusinessChannelEnum businessChannel;
     private ProductTypeEnum productType;
+    private BusinessChannelEnum businessChannel;
     private StatusEnum status;
     private LocalDate startDate;
     private LocalDate endDate;

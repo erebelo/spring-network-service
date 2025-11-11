@@ -15,7 +15,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 @Configuration
 public class AsyncExecutorConfig {
 
-    /*
+    /**
      * Dedicated executor for manual asynchronous hydration triggered via
      * CompletableFuture. By declaring it as a separate bean, we ensure that manual
      * triggers execute independently of scheduled tasks and do not compete with
