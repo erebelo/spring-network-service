@@ -1,6 +1,7 @@
 package com.erebelo.springnetworkservice.controller;
 
-import static com.erebelo.springnetworkservice.constant.BusinessConstant.NETWORK_PATH;
+import static com.erebelo.springnetworkservice.constant.BusinessConstant.NETWORKS_GRAPH_PATH;
+import static com.erebelo.springnetworkservice.constant.BusinessConstant.NETWORKS_PATH;
 
 import com.erebelo.springnetworkservice.domain.dto.NetworkDto;
 import com.erebelo.springnetworkservice.domain.dto.NonSellingRelationshipDto;
@@ -36,7 +37,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Profile("local")
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(NETWORK_PATH)
+@RequestMapping(NETWORKS_PATH)
 public class NetworkUIController {
 
     private final NetworkController controller;
@@ -56,10 +57,10 @@ public class NetworkUIController {
     private static final String SELLING_REL_LABEL = "Selling Relationship";
     private static final String NON_SELLING_REL_LABEL = "Non-Selling Relationship";
 
-    @GetMapping(value = "/graph/{rootReferenceId}", produces = {MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(value = NETWORKS_GRAPH_PATH + "/{rootReferenceId}", produces = {MediaType.APPLICATION_JSON_VALUE})
     public Map<String, Object> getNetworkGraph(@PathVariable("rootReferenceId") String rootReferenceId,
             @RequestParam(value = "relationshipDate", required = false) LocalDate relationshipDate) {
-        log.info("POST /v1/networks/graph/{}/?relationshipDate={}", rootReferenceId,
+        log.info("POST {}/{}?relationshipDate={}", NETWORKS_PATH + NETWORKS_GRAPH_PATH, rootReferenceId,
                 relationshipDate != null ? relationshipDate : "");
 
         NetworkDto network = controller.getNetworkByRootReferenceId(rootReferenceId, relationshipDate).getBody();

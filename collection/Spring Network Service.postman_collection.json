@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "037cf685-992a-4346-8640-a600ccb2dd91",
+		"name": "Spring Network Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3559566"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"item": [
+				{
+					"name": "GET Actuator Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/spring-network-service/actuator/health",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"spring-network-service",
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Networks",
+			"item": [
+				{
+					"name": "GET Network Graph UI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/spring-network-service/networks/graph/Z12345?relationshipDate=2025-10-12",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"spring-network-service",
+								"networks",
+								"graph",
+								"Z12345"
+							],
+							"query": [
+								{
+									"key": "relationshipDate",
+									"value": "2025-10-12"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Trigger Network Hydration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"recordTypes\": [\r\n        \"CONTRACT_ADVISOR\",\r\n        \"CONTRACT_FIRM\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/spring-network-service/networks/hydration/start",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"spring-network-service",
+								"networks",
+								"hydration",
+								"start"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		}
+	]
+}

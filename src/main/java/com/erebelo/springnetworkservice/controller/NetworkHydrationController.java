@@ -1,7 +1,7 @@
 package com.erebelo.springnetworkservice.controller;
 
-import static com.erebelo.springnetworkservice.constant.BusinessConstant.NETWORK_HYDRATION_PATH;
-import static com.erebelo.springnetworkservice.constant.BusinessConstant.NETWORK_PATH;
+import static com.erebelo.springnetworkservice.constant.BusinessConstant.NETWORKS_HYDRATION_PATH;
+import static com.erebelo.springnetworkservice.constant.BusinessConstant.NETWORKS_PATH;
 
 import com.erebelo.springnetworkservice.service.NetworkHydrationService;
 import lombok.RequiredArgsConstructor;
@@ -18,16 +18,16 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @Validated
 @RestController
-@RequestMapping(NETWORK_PATH)
+@RequestMapping(NETWORKS_PATH)
 @RequiredArgsConstructor
 public class NetworkHydrationController {
 
     private final NetworkHydrationService service;
 
     @ResponseStatus(HttpStatus.ACCEPTED)
-    @PostMapping(value = NETWORK_HYDRATION_PATH, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = NETWORKS_HYDRATION_PATH, produces = MediaType.TEXT_PLAIN_VALUE)
     public ResponseEntity<String> triggerNetworkHydration() {
-        log.info("POST {}", NETWORK_PATH + NETWORK_HYDRATION_PATH);
+        log.info("POST {}", NETWORKS_PATH + NETWORKS_HYDRATION_PATH);
         String keySuffix = service.triggerNetworkHydration();
         return ResponseEntity.accepted().body("Network hydration started with timestamp key suffix: " + keySuffix);
     }

@@ -1,6 +1,6 @@
 package com.erebelo.springnetworkservice.controller;
 
-import static com.erebelo.springnetworkservice.constant.BusinessConstant.NETWORK_PATH;
+import static com.erebelo.springnetworkservice.constant.BusinessConstant.NETWORKS_PATH;
 
 import com.erebelo.springnetworkservice.domain.dto.NetworkDto;
 import com.erebelo.springnetworkservice.service.NetworkService;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @Validated
 @RestController
-@RequestMapping(NETWORK_PATH)
+@RequestMapping(NETWORKS_PATH)
 @RequiredArgsConstructor
 public class NetworkController {
 
@@ -30,7 +30,7 @@ public class NetworkController {
     public ResponseEntity<NetworkDto> getNetworkByRootReferenceId(
             @PathVariable("rootReferenceId") String rootReferenceId,
             @Valid @RequestParam(value = "relationshipDate", required = false) LocalDate relationshipDate) {
-        log.info("GET {}/{}?relationshipDate={}", NETWORK_PATH, rootReferenceId,
+        log.info("GET {}/{}?relationshipDate={}", NETWORKS_PATH, rootReferenceId,
                 relationshipDate != null ? relationshipDate : "");
         return ResponseEntity.ok(service.findByRootReferenceId(rootReferenceId, relationshipDate));
     }
