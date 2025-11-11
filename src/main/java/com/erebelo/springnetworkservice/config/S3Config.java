@@ -25,7 +25,7 @@ public class S3Config {
         ClientAsyncConfiguration asyncConfig = ClientAsyncConfiguration.builder()
                 .advancedOption(SdkAdvancedAsyncClientOption.FUTURE_COMPLETION_EXECUTOR, s3TaskExecutor).build();
 
-        return S3AsyncClient.builder().httpClient(httpClient).asyncConfiguration(asyncConfig).region(Region.US_EAST_1)
+        return S3AsyncClient.builder().httpClient(httpClient).asyncConfiguration(asyncConfig).region(Region.US_EAST_2)
                 .credentialsProvider(DefaultCredentialsProvider.builder().build()).build();
     }
 }
