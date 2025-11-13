@@ -1,6 +1,8 @@
 package com.erebelo.springnetworkservice.domain.model;
 
 import com.erebelo.springnetworkservice.domain.enumeration.StatusEnum;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,10 +23,18 @@ public class NonSellingRelationship extends BaseEntity {
     @Id
     private String id;
 
+    @Valid
     private NonSellingRelationshipVertex from;
+
+    @Valid
     private RelationshipVertex to;
+
+    @NotNull(message = "status is mandatory")
     private StatusEnum status;
+
+    @NotNull(message = "startDate is mandatory")
     private LocalDate startDate;
+
     private LocalDate endDate;
 
 }
