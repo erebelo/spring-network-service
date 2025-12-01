@@ -33,7 +33,7 @@ public class NetworkServiceImpl implements NetworkService {
         }
 
         Contract contract = contractRepository.findByReferenceId(rootReferenceId)
-                .orElseThrow(() -> new NotFoundException("No contract found for rootReferenceId=" + rootReferenceId));
+                .orElseThrow(() -> new NotFoundException("No contract found by rootReferenceId=" + rootReferenceId));
 
         if (!networkProperties.getRootCriteria().contains(contract.getRole())) {
             throw new BadRequestException(

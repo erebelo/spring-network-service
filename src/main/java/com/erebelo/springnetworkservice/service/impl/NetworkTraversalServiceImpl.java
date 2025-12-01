@@ -3,7 +3,6 @@ package com.erebelo.springnetworkservice.service.impl;
 import static com.erebelo.springnetworkservice.domain.enumeration.RoleEnum.BENEFICIARY;
 import static com.erebelo.springnetworkservice.domain.enumeration.RoleEnum.DEPENDENT;
 import static com.erebelo.springnetworkservice.domain.enumeration.RoleEnum.POLICY_HOLDER;
-import static com.erebelo.springnetworkservice.domain.enumeration.RoleEnum.SUB_AGENT;
 
 import com.erebelo.springnetworkservice.domain.dto.RelationshipDto;
 import com.erebelo.springnetworkservice.domain.dto.RelationshipVertexDto;
@@ -33,7 +32,7 @@ public class NetworkTraversalServiceImpl implements NetworkTraversalService {
     /**
      * Set of roles ineligible for high-level node.
      */
-    private static final Set<RoleEnum> NON_HIGH_LEVEL_ROLES = Set.of(SUB_AGENT, DEPENDENT, BENEFICIARY, POLICY_HOLDER);
+    private static final Set<RoleEnum> NON_HIGH_LEVEL_ROLES = Set.of(DEPENDENT, BENEFICIARY, POLICY_HOLDER);
 
     /**
      * Builds the full relationship network starting from a given root referenceId,
@@ -77,15 +76,18 @@ public class NetworkTraversalServiceImpl implements NetworkTraversalService {
      * 
      * <pre>
      * Example input relationships:
-     * 	   R1: { fromVertex: { referenceId=CLIENT_ID }, toVertex: { referenceId=REGIONAL_MANAGER_ID } }
-     * 	   R2: { fromVertex: { referenceId=CLIENT_ID } toVertex: { referenceId=POLICY_HOLDER } }
-     * 	   R3: { fromVertex: { referenceId=REGIONAL_MANAGER } toVertex: { referenceId=AGENCY } }
-     * 	   R4: { fromVertex: { referenceId=POLICY_HOLDER } toVertex: { referenceId=REGIONAL_MANAGER } } [cycle detected]
+     * 	   R1: { fromVertex: { referenceId=CLIENT_ID }, toVertex: { referenceId=SUB_AGENT_ID } }
+     * 	   R2: { fromVertex: { referenceId=CLIENT_ID } toVertex: { referenceId=POLICY_HOLDER_ID } }
+     * 	   R3: { fromVertex: { referenceId=SUB_AGENT_ID } toVertex: { referenceId=REGIONAL_MANAGER_ID } }
+     * 	   R4: { fromVertex: { referenceId=REGIONAL_MANAGER_ID } toVertex: { referenceId=AGENCY_ID} }
+     * 	   R5: { fromVertex: { referenceId=REGIONAL_MANAGER_ID } toVertex: { referenceId=CLIENT_ID} } [cycle detected]
+     * 	   R6: { fromVertex: { referenceId=AGENCY_ID } toVertex: { referenceId=INSURER_ID} }
      *
      * After building vertexConnections:
-     *     CLIENT_ID = [ { referenceId=REGIONAL_MANAGER_ID }, { referenceId=POLICY_HOLDER } ]
-     *     REGIONAL_MANAGER_ID = [ { referenceId=AGENCY } ]
-     *     POLICY_HOLDER = [ { referenceId=REGIONAL_MANAGER_ID } ] [cycle detected]
+     *     CLIENT_ID = [ { referenceId=SUB_AGENT_ID }, { referenceId=POLICY_HOLDER_ID } ]
+     *     SUB_AGENT_ID = [ { referenceId=REGIONAL_MANAGER_ID } ]
+     *     REGIONAL_MANAGER_ID = [ { referenceId=AGENCY_ID }, { referenceId=CLIENT_ID } [cycle detected] ]
+     *     AGENCY_ID = [ { referenceId=INSURER_ID } ]
      * </pre>
      *
      * Note: During traversal, cycles are detected and skipped to prevent infinite
