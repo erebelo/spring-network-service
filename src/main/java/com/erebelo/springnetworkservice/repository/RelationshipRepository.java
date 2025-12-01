@@ -12,7 +12,7 @@ public interface RelationshipRepository extends MongoRepository<Relationship, St
     @Query("{ 'from.referenceId': ?0 }")
     List<Relationship> findByFromReferenceId(String referenceId);
 
-    @Query("{ 'to.referenceId': ?0 }")
-    List<Relationship> findByToReferenceId(String referenceId);
+    @Query(value = "{ 'to.referenceId': ?0 }", exists = true)
+    boolean existsByToReferenceId(String referenceId);
 
 }

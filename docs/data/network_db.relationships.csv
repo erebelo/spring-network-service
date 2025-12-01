@@ -1,0 +1,10 @@
+from.referenceId,to.referenceId,status,startDate,endDate,createdBy,modifiedBy,createdDateTime,modifiedDateTime,version,_class
+CTR006,CTR007,Active,2023-05-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Contract
+CTR006,CTR008,Inactive,2023-05-01,2023-05-31,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Contract
+CTR006,CTR009,Active,2023-05-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Contract
+CTR006,CTR005,Active,2023-05-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Contract
+CTR006,CTR002,Inactive,2023-05-01,2023-12-31,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Contract
+CTR005,CTR004,Active,2023-04-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Contract
+CTR004,CTR003,Active,2023-03-15,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Contract
+CTR003,CTR001,Active,2023-03-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Contract
+CTR002,CTR001,Inactive,2023-02-01,2023-10-12,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Contract

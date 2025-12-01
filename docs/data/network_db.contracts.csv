@@ -1,0 +1,10 @@
+referenceId,profileId,role,businessChannel,productType,status,startDate,endDate,createdBy,modifiedBy,createdDateTime,modifiedDateTime,version,_class
+CTR001,P001,Insurer,Direct,Life Insurance,Active,2023-01-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Relationship
+CTR002,P001,Agent,Broker,Health Insurance,Active,2023-02-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Relationship
+CTR003,P001,Agency,Broker,Pension,Active,2023-03-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Relationship
+CTR004,P001,Regional Manager,Broker,Investment,Active,2023-03-15,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Relationship
+CTR005,P001,Sub-Agent,Broker,Life Insurance,Active,2023-04-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Relationship
+CTR006,P001,Client,Digital,Health Insurance,Active,2023-05-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Relationship
+CTR007,P001,Policy Holder,Digital,Life Insurance,Active,2023-05-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Relationship
+CTR008,P001,Dependent,Digital,Life Insurance,Inactive,2023-05-01,2023-05-31,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Relationship
+CTR009,P001,Beneficiary,Digital,Life Insurance,Active,2023-05-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Relationship

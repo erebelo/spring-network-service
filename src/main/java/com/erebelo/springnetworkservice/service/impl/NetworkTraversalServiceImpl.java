@@ -64,7 +64,7 @@ public class NetworkTraversalServiceImpl implements NetworkTraversalService {
     }
 
     private void validateReferenceIdIsRootNode(String referenceId) {
-        if (repository.findByToReferenceId(referenceId).isEmpty()) {
+        if (repository.existsByToReferenceId(referenceId)) {
             throw new IllegalStateException(String.format("Provided referenceId=%s is not the root", referenceId));
         }
     }
@@ -77,14 +77,14 @@ public class NetworkTraversalServiceImpl implements NetworkTraversalService {
      * <pre>
      * Example input relationships:
      * 	   R1: { fromVertex: { referenceId=CLIENT_ID }, toVertex: { referenceId=SUB_AGENT_ID } }
-     * 	   R2: { fromVertex: { referenceId=CLIENT_ID } toVertex: { referenceId=POLICY_HOLDER_ID } }
+     * 	   R2: { fromVertex: { referenceId=CLIENT_ID } toVertex: { referenceId=DEPENDENT_ID } }
      * 	   R3: { fromVertex: { referenceId=SUB_AGENT_ID } toVertex: { referenceId=REGIONAL_MANAGER_ID } }
      * 	   R4: { fromVertex: { referenceId=REGIONAL_MANAGER_ID } toVertex: { referenceId=AGENCY_ID} }
      * 	   R5: { fromVertex: { referenceId=REGIONAL_MANAGER_ID } toVertex: { referenceId=CLIENT_ID} } [cycle detected]
      * 	   R6: { fromVertex: { referenceId=AGENCY_ID } toVertex: { referenceId=INSURER_ID} }
      *
      * After building vertexConnections:
-     *     CLIENT_ID = [ { referenceId=SUB_AGENT_ID }, { referenceId=POLICY_HOLDER_ID } ]
+     *     CLIENT_ID = [ { referenceId=SUB_AGENT_ID }, { referenceId=DEPENDENT_ID } ]
      *     SUB_AGENT_ID = [ { referenceId=REGIONAL_MANAGER_ID } ]
      *     REGIONAL_MANAGER_ID = [ { referenceId=AGENCY_ID }, { referenceId=CLIENT_ID } [cycle detected] ]
      *     AGENCY_ID = [ { referenceId=INSURER_ID } ]
