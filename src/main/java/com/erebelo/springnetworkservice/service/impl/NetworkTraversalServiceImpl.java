@@ -32,7 +32,7 @@ public class NetworkTraversalServiceImpl implements NetworkTraversalService {
     /**
      * Set of roles ineligible for high-level node.
      */
-    private static final Set<RoleEnum> NON_HIGH_LEVEL_ROLES = Set.of(DEPENDENT, BENEFICIARY, POLICY_HOLDER);
+    private static final Set<RoleEnum> NON_HIGH_LEVEL_ROLES = Set.of(POLICY_HOLDER, DEPENDENT, BENEFICIARY);
 
     /**
      * Builds the full relationship network starting from a given root referenceId,

@@ -18,20 +18,23 @@ public enum RoleEnum implements EnumValueType {
     @JsonProperty("Insurer")
     INSURER("Insurer"),
 
-    @JsonProperty("Agent")
-    AGENT("Agent"),
-
     @JsonProperty("Agency")
     AGENCY("Agency"),
 
     @JsonProperty("Regional Manager")
     REGIONAL_MANAGER("Regional Manager"),
 
+    @JsonProperty("Agent")
+    AGENT("Agent"),
+
     @JsonProperty("Sub-Agent")
     SUB_AGENT("Sub-Agent"),
 
-    @JsonProperty("Client")
-    CLIENT("Client"),
+    @JsonProperty("Advisor")
+    ADVISOR("Advisor"),
+
+    @JsonProperty("Individual")
+    INDIVIDUAL("Individual"),
 
     @JsonProperty("Policy Holder")
     POLICY_HOLDER("Policy Holder"),
