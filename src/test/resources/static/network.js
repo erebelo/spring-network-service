@@ -238,6 +238,8 @@ function initializeGraph(data) {
           color: "#000000",
           width: 3,
           "curve-style": "bezier",
+          "control-point-step-size": 80,
+          "control-point-distance": 40,
           "arrow-scale": 1.2,
           "edge-distances": "node-position",
           "source-endpoint": "outside-to-node",
