@@ -213,7 +213,7 @@ public class NetworkDecoratorServiceImpl implements NetworkDecoratorService {
 
         if (network.getEndDate() != null) {
             if (!relationshipDateFilter.isBefore(network.getStartDate())
-                    && relationshipDateFilter.isAfter(network.getEndDate())) {
+                    && !relationshipDateFilter.isAfter(network.getEndDate())) {
                 return StatusEnum.ACTIVE;
             }
 

@@ -45,9 +45,9 @@ public class NetworkUIController {
     private static final String NETWORK_JSON_KEY = "networks";
     private static final String VERTICES_KEY = "vertices";
     private static final String EDGES_KEY = "edges";
-    private static final String NET_KEY = "_net:";
-    private static final String VTX_KEY = "_vtx:";
-    private static final String EDG_KEY = "_edg:";
+    private static final String NET_KEY = "NET:";
+    private static final String VTX_KEY = "_VTX:";
+    private static final String EDG_KEY = "_EDG:";
     private static final String LABEL_KEY = "label";
     private static final String NAME_KEY = "name";
     private static final String FROM_KEY = "from";

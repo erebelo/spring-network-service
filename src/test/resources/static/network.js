@@ -117,17 +117,16 @@ function validateForm() {
   );
   const inputValue = document.getElementById("network-rel-date").value.trim();
   if (relDateContainer.style.display !== "none" && inputValue !== "") {
-    const regex = /^(\d{4})-(\d{2})-(\d{2})$/;
-    let isValidDate = true;
+    const regex = /^\d{4}-\d{2}-\d{2}$/;
+    let isValidDate = false;
+
     if (regex.test(inputValue)) {
-      const [_, year, month, day] = inputValue.split("-");
-      const date = new Date(year, month - 1, day);
+      const [year, month, day] = inputValue.split("-").map(Number);
+      const date = new Date(year, month - 1, day); // month is 0-based
       isValidDate =
         date.getFullYear() == year &&
         date.getMonth() == month - 1 &&
         date.getDate() == day;
-    } else {
-      isValidDate = false;
     }
 
     if (!isValidDate) {
@@ -181,7 +180,7 @@ function transformGraphData(data) {
     data: {
       id: vertexId,
       label: data.vertices[vertexId].label,
-      name: data.vertices[vertexId].name,
+      name: data.vertices[vertexId].name.replace(" ", "\n"),
       properties: data.vertices[vertexId],
     },
   }));
@@ -218,7 +217,9 @@ function initializeGraph(data) {
           "text-valign": "center",
           "text-wrap": "wrap",
           "max-text-width": 60,
-          "font-size": 12,
+          "font-size": 16,
+          "line-height": "1.2px",
+          padding: "12px",
           width: 80,
           height: 80,
         },
@@ -269,7 +270,11 @@ function initializeGraph(data) {
   });
 
   addOpenPopupFeature(cy);
-  cy.fit();
+
+  cy.on("layoutstop", () => {
+    cy.resize();
+    cy.fit();
+  });
 }
 
 function addOpenPopupFeature(cy) {

@@ -52,7 +52,7 @@ public class NetworkTraversalServiceImpl implements NetworkTraversalService {
     }
 
     private void deriveNetworkDFS(String fromReferenceId, List<Relationship> network, Set<String> visited) {
-        if (visited.add(fromReferenceId)) {
+        if (!visited.add(fromReferenceId)) {
             // Skip recursive call if this node was already visited (cycle detected)
             return;
         }
