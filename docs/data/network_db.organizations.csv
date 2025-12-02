@@ -1,0 +1,4 @@
+orgRefId,name,status,startDate,endDate,createdBy,modifiedBy,createdDateTime,modifiedDateTime,version,_class
+ORG001,Alpha Insurance Corp,Active,2022-01-10,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Organization
+ORG002,Beta Financial Group,Inactive,2024-05-15,2025-03-31,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Organization
+ORG003,Gamma Health Services,Active,2021-09-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.Organization

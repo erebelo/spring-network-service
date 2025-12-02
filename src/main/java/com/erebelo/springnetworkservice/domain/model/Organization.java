@@ -23,6 +23,9 @@ public class Organization extends BaseEntity {
     @Id
     private String id;
 
+    @NotBlank(message = "orgRefId is mandatory")
+    private String orgRefId;
+
     @NotBlank(message = "name is mandatory")
     private String name;
 

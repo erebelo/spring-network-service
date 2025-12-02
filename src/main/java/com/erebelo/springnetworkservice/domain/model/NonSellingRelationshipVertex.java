@@ -13,8 +13,8 @@ import org.springframework.data.annotation.Transient;
 @AllArgsConstructor
 public class NonSellingRelationshipVertex {
 
-    @NotBlank(message = "orgId is mandatory")
-    private String orgId;
+    @NotBlank(message = "orgRefId is mandatory")
+    private String orgRefId;
 
     @Transient
     private String orgName;

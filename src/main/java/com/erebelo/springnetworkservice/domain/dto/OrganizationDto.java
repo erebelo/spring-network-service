@@ -18,6 +18,7 @@ import lombok.NoArgsConstructor;
 public class OrganizationDto {
 
     private String id;
+    private String orgRefId;
     private String name;
     private StatusEnum status;
     private LocalDate startDate;

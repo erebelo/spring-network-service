@@ -180,7 +180,7 @@ function transformGraphData(data) {
     data: {
       id: vertexId,
       label: data.vertices[vertexId].label,
-      name: data.vertices[vertexId].name.replace(" ", "\n"),
+      name: data.vertices[vertexId].name.replaceAll(" ", "\n"),
       properties: data.vertices[vertexId],
     },
   }));
@@ -217,9 +217,9 @@ function initializeGraph(data) {
           "text-valign": "center",
           "text-wrap": "wrap",
           "max-text-width": 60,
-          "font-size": 16,
+          "font-size": 14,
           "line-height": "1.2px",
-          padding: "12px",
+          padding: "8px",
           width: 80,
           height: 80,
         },

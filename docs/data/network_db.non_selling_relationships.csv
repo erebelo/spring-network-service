@@ -1,0 +1,5 @@
+from.orgRefId,to.referenceId,status,startDate,endDate,createdBy,modifiedBy,createdDateTime,modifiedDateTime,version,_class
+ORG001,CTR002,Active,2024-05-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.NonSellingRelationship
+ORG001,CTR002,Inactive,2024-05-01,2024-05-31,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.NonSellingRelationship
+ORG002,CTR002,Active,2024-06-01,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.NonSellingRelationship
+ORG003,CTR012,Active,2024-06-10,,default,default,2025-12-12T10:30:57.687Z,2025-12-12T10:30:57.687Z,0,com.erebelo.springnetworkservice.domain.model.NonSellingRelationship

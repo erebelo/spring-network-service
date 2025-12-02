@@ -126,7 +126,7 @@ public class NetworkUIController {
                     return;
                 }
 
-                String fromVertexId = NET_KEY + networkId + VTX_KEY + from.getOrgId();
+                String fromVertexId = NET_KEY + networkId + VTX_KEY + from.getOrgRefId();
                 String toVertexId = NET_KEY + networkId + VTX_KEY + to.getReferenceId();
 
                 Map<String, String> relationshipProps = new LinkedHashMap<>();

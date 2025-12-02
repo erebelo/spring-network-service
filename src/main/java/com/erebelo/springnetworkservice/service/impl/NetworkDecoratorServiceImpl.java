@@ -137,7 +137,7 @@ public class NetworkDecoratorServiceImpl implements NetworkDecoratorService {
     }
 
     private void setNonSellingRelationshipVertex(NonSellingRelationship nonSellingRelationship) {
-        NonSellingRelationshipVertex from = findOrganizationByOrgId(nonSellingRelationship.getFrom().getOrgId());
+        NonSellingRelationshipVertex from = findOrganizationByOrgRefId(nonSellingRelationship.getFrom().getOrgRefId());
         nonSellingRelationship.setFrom(from);
     }
 
@@ -229,9 +229,9 @@ public class NetworkDecoratorServiceImpl implements NetworkDecoratorService {
         return relationshipMapper.contractToRelationshipVertex(contract);
     }
 
-    private NonSellingRelationshipVertex findOrganizationByOrgId(String orgId) {
-        Organization organization = organizationRepository.findById(orgId)
-                .orElseThrow(() -> new NotFoundException("No organization found by orgId=" + orgId));
+    private NonSellingRelationshipVertex findOrganizationByOrgRefId(String orgRefId) {
+        Organization organization = organizationRepository.findByOrgRefId(orgRefId)
+                .orElseThrow(() -> new NotFoundException("No organization found by orgRefId=" + orgRefId));
         return nonSellingRelationshipMapper.organizationToNonSellingRelationshipVertex(organization);
     }
 }

@@ -17,7 +17,6 @@ public interface NonSellingRelationshipMapper {
 
     NonSellingRelationshipDto toDto(NonSellingRelationship relationship);
 
-    @Mapping(target = "orgId", source = "id")
     @Mapping(target = "orgName", source = "name")
     NonSellingRelationshipVertex organizationToNonSellingRelationshipVertex(Organization organization);
 

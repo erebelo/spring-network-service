@@ -11,6 +11,9 @@ db.createCollection("non_selling_relationships");
 db.contracts.createIndex({ referenceId: 1 }, { unique: true });
 db.contracts.createIndex({ role: 1 });
 
+// ORGANIZATIONS INDEXES
+db.organizations.createIndex({ orgRefId: 1 }, { unique: true });
+
 // RELATIONSHIPS INDEXES
 db.relationships.createIndex( "from.referenceId": 1 });
 db.relationships.createIndex({ "to.referenceId": 1 });

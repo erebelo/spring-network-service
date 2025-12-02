@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class NonSellingRelationshipVertexDto {
 
-    private String orgId;
+    private String orgRefId;
     private String orgName;
 
 }

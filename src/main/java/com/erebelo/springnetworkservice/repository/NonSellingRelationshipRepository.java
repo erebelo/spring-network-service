@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface NonSellingRelationshipRepository extends MongoRepository<NonSellingRelationship, String> {
 
-    @Query("{ 'referenceId.to': { $in: ?0 } }")
+    @Query("{ 'to.referenceId': { $in: ?0 } }")
     Optional<List<NonSellingRelationship>> findNonSellingRelationshipsByReferenceIds(Set<String> referenceIds);
 
 }
