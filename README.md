@@ -4,7 +4,7 @@ REST API project developed in Java using Spring Boot 3 and MongoDB to manage and
 
 The application discovers and validates hierarchical relationships stored in MongoDB, derives complete connection graphs using depth-first (DFS) and breadth-first (BFS) traversal algorithms, and generates enriched network structures through decoration and validation layers.
 
-It supports large-scale asynchronous network hydration to Amazon S3 via multipart uploads, with dynamic batching, error tracking, and concurrency control using semaphores and CompletableFutures. A scheduled task, protected by distributed locks, ensures that network hydration jobs run safely and exclusively across environments.
+It supports large-scale asynchronous network hydration to Amazon S3 via multipart uploads, with dynamic batching, error tracking, and concurrency control using semaphores and CompletableFutures. Network hydration can be triggered via REST endpoints or automatically through a scheduled task protected by distributed locks, ensuring reliable and scalable execution across environments.
 
 ## Requirements
 
