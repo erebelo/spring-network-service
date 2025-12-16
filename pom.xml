@@ -12,7 +12,9 @@
 	<artifactId>spring-network-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-network-service</name>
-	<description>Java project built with Spring Boot for discovering and hydrating complex networks from MongoDB to Amazon S3 via asynchronous multipart uploads with distributed locking</description>
+    <description>Java project built with Spring Boot for discovering and hydrating complex networks from MongoDB to Amazon S3 via asynchronous
+        multipart uploads
+    </description>
 
     <repositories>
         <repository>
